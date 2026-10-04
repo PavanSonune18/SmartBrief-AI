@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>SmartBrief History</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head><body>
+<nav><div class="brand">SmartBrief <span>AI</span></div><a href="/">← Summarizer</a></nav>
+<main><section class="hero"><div class="badge">SAVED RESULTS</div><h1>Summary History</h1><p>Your latest generated summaries.</p></section>
+{% for r in rows %}<article class="card history"><div class="date">{{r[5]}}</div><p>{{r[1]}}</p><small>{{r[2]}} → {{r[3]}} words • {{r[4]}}% compression</small></article>
+{% else %}<div class="card panel">No summaries yet. Generate your first summary.</div>{% endfor %}
+</main></body></html>
