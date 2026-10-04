@@ -14,7 +14,7 @@ app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024
 
 print("Loading summarization model (first run may take a few minutes)...")
-summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+summarizer = pipeline("summarization", model="sshleifer/distilbart-xsum-6-6")
 
 def init_db():
     with sqlite3.connect(DB_PATH) as con:
